@@ -1,11 +1,29 @@
-import { useState } from 'react'
-import './App.css'
 
-function App() {
+import { createBrowserRouter } from "react-router-dom";
+import { Home } from "./pages/home";
+import { Cart } from "./pages/cart";
+import { Layout } from "./components/layout";
+import { Detail } from "./components/detail";
 
-  return (
-    <div>Teste</div>
-  )
-}
+const router = createBrowserRouter([
+  {
+    element: <Layout/>,
+    children: [
+      {
+        path: "/",
+        element: <Home/>
+      },
+      {
+        path: "/cart",
+        element: <Cart/>
+      },
+      {
+        path: "/product/:id",
+        element: <Detail/>
+      },
+      
+    ]
+  }
+])
 
-export default App
+export { router };
