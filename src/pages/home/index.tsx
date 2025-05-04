@@ -78,6 +78,6 @@ useEffect(() => {
 
         </main>
       </div>
-  
+
     )
   }
